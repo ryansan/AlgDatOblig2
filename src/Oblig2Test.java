@@ -21,7 +21,7 @@ public class Oblig2Test {
 
         //antallFeil += oppgave1();
         //antallFeil += oppgave2();
-        //antallFeil += oppgave3();
+        antallFeil += oppgave3();
         //antallFeil += oppgave4();
         //antallFeil += oppgave5();
         //antallFeil += oppgave6();
@@ -439,6 +439,7 @@ public class Oblig2Test {
                     ("Oppgave 3t: Du har " + s + ", skal være [5, 3, 2, -1]!");
         }
 
+        /*
         Integer[] i = {};
         DobbeltLenketListe<Integer> iliste = new DobbeltLenketListe<>(i);
 
@@ -529,7 +530,9 @@ public class Oblig2Test {
             }
         }
 
+*/
         return antallFeil;
+
     }
 
     ////// Oppgave 4 /////////////////////

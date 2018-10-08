@@ -2,10 +2,19 @@ public class Main {
 
     public static void main(String[] args) {
 
+        DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
+        for (int i = 0; i <= 3; i++) {
+            liste.leggInn(i);
+        }
 
-        String[] s = {null,"Ole", null, "Per", "Kari", null};
-        Liste<String> liste = new DobbeltLenketListe<>(s);
-        System.out.println(liste.antall() + " " + liste.tom());
+        System.out.println(liste.toString());
+
+        liste.oppdater(3,100);
+
+        System.out.println(liste.hent(3));
+
+        System.out.println(liste.toString());
+
 
     }
 }
