@@ -1,6 +1,11 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
+
+        String[] s = {null,"Ole", null, "Per", "Kari", null};
+        Liste<String> liste = new DobbeltLenketListe<>(s);
+        System.out.println(liste.antall() + " " + liste.tom());
+
     }
 }
