@@ -21,11 +21,11 @@ public class Oblig2Test {
 
         //antallFeil += oppgave1();
         //antallFeil += oppgave2();
-        antallFeil += oppgave3();
+        //antallFeil += oppgave3();
         //antallFeil += oppgave4();
         //antallFeil += oppgave5();
-        //antallFeil += oppgave6();
-        //antallFeil += oppgave7();
+//        antallFeil += oppgave6();
+//        antallFeil += oppgave7();
         //antallFeil += oppgave8();
         //antallFeil += oppgave9();
         //antallFeil += oppgave10();
@@ -304,6 +304,7 @@ public class Oblig2Test {
     ////// Oppgave 3 /////////////////////
 
     public static int oppgave3() {
+
         int antallFeil = 0;
 
         Liste<Integer> testliste = new DobbeltLenketListe<>();
@@ -439,7 +440,7 @@ public class Oblig2Test {
                     ("Oppgave 3t: Du har " + s + ", skal være [5, 3, 2, -1]!");
         }
 
-        /*
+
         Integer[] i = {};
         DobbeltLenketListe<Integer> iliste = new DobbeltLenketListe<>(i);
 
@@ -530,7 +531,7 @@ public class Oblig2Test {
             }
         }
 
-*/
+
         return antallFeil;
 
     }

@@ -1,20 +1,20 @@
+import java.util.Iterator;
+import java.util.LinkedList;
+
 public class Main {
 
     public static void main(String[] args) {
-
         DobbeltLenketListe<Integer> liste = new DobbeltLenketListe<>();
-        for (int i = 0; i <= 3; i++) {
-            liste.leggInn(i);
+
+        for (int k = 1; k <= 13; k++) {
+            liste.leggInn(k);
         }
 
-        System.out.println(liste.toString());
-
-        liste.oppdater(3,100);
-
-        System.out.println(liste.hent(3));
-
-        System.out.println(liste.toString());
-
-
+        for (Iterator<Integer> i = liste.iterator(); i.hasNext(); ) {
+            int verdi = i.next();
+            if (verdi % 2 == 1) {
+                i.remove(); // fjerner oddetallene
+            }
+        }
     }
 }
