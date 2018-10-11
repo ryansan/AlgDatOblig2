@@ -458,9 +458,30 @@ public class DobbeltLenketListe<T> implements Liste<T>
         return sb.toString();
     }
 
-    public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
-    {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+    public static <T> void sorter(Liste<T> liste, Comparator<? super T> c) {
+
+        for (int i = 0; i < liste.antall()-1; i++) {
+
+            T p = liste.hent(i);
+            T q = liste.hent(i+1);
+
+            if(c.compare(p,q) > 0){
+                liste.oppdater(i,q);
+                liste.oppdater(i+1,p);
+            }
+        }
+
+        for (int i = 0; i < liste.antall(); i++) {
+            T p = liste.hent(i);
+
+            for (int j = i; j < liste.antall(); j++) {
+                T q = liste.hent(j);
+                if(c.compare(p,q) > 0){
+                    sorter(liste,c);
+                }
+            }
+        }
+
     }
 
     @Override
@@ -565,14 +586,15 @@ public class DobbeltLenketListe<T> implements Liste<T>
                 }
 
                 p = r.neste;                 // det er q som skal fjernes
-                r.neste = denne;                 // "hopper" over q
+                r.neste = denne;// "hopper" over q
+                denne.forrige = r;
                 if (denne == null) hale = r;     // q var den siste
 
             }
 
-            p.verdi = null;                // nuller verdien i noden
-            p.neste = null;
-            p.forrige = null;           // nuller nestepeker
+//            p.verdi = null;                // nuller verdien i noden
+//            p.neste = null;
+//            p.forrige = null;           // nuller nestepeker
 
             endringer++;             // en endring i listen
             iteratorendringer++;    // en endring av denne iteratoren
